@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="reportsPage">
+                    <h1 class="site-title">Interplanetary Transport System</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="Welcome">Welcome, <b>Maria</b></p>
+                </div>
+            </div>
+            <div class="row tm-content-row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block">
+                        <h2 class="tm-block-title">Informatie over passagiers</h2>
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller">
+                        <h2 class="tm-block-title">Voertuiginformatie</h2>
+                        <div id="pieChartContainer">
+                            <canvas id="pieChart" class="chartjs-render-monitor" width="200" height="200"></canvas>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-overflow">
+                        <h2 class="tm-block-title">Sneltoetsen piloten</h2>
+                        <div class="tm-notification-items">
+                            <div class="media tm-notification-item">
+                                <div class="tm-gray-circle"><img src="img/notification-01.jpg" alt="Avatar Image"></div>
+                                <div class="media-body">
+                                    <p class="mb-2"><b>Monica van Der Meer</b> </p>
+                                     <p>33-999-78</p>
+                                </div>
+            </div>
+                            
+                            <div class="media tm-notification-item">
+                                <div class="tm-gray-circle"><img src="img/notification-02.jpg" alt="Avatar Image"></div>
+                                <div class="media-body">
+                                    <p class="mb-2"><b>Nadia Smits</b></p>
+                                     <p>33-997-65</p>
+                                </div>
+                            </div>
+                            <div class="media tm-notification-item">
+                                <div class="circle"><img src="img/notification-03.jpg" alt="Avatar Image"></div>
+                                <div class="media-body">
+                                    <p class="mb-2"><b>Natalie Jhons</b> </p>
+                                     <p>33-995-45</p>
+                                </div> 
+                            </div>  
+                          
+        </div>
+        </div>
+        </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/tooplate-scripts.js"></script>
+    <script>
+       Chart.defaults.global.defaultFontColor = 'white';
+let ctxLine, ctxBar, ctxPie, optionsLine, optionsBar, optionsPie, 
+configLine, configBar, configPie, lineChart;
+barChart, pieChart;
+$(function() {
+    drawLineChart();
+    drawBarChart();
+    drawPieChart();
+    $(window).resize(function() {
+        updateLineChart();
+        updateBarChart()
+    })
+})
+    </script>
+</body>
+</html>
